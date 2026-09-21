@@ -43,6 +43,11 @@ android {
     }
 
     buildTypes {
+        // Fork-only: lets the test build install next to the Play Store app.
+        debug {
+            applicationIdSuffix = ".dev"
+        }
+
         release {
             signingConfig = signingConfigs.getByName("release")
             isMinifyEnabled = true
